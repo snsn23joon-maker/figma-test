@@ -1,77 +1,246 @@
-<div style="position: absolute; top: 0px; left: 0px; width: 390px; height: 844px;background-color: #f0f8f0;">
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Screen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-</div>
-<div style="position: absolute; top: 1px; left: 0px; color: #010101;">9:41</div>
-</div>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f0f8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
+        .container {
+            width: 390px;
+            height: 844px;
+            background-color: #f0f8f0;
+            position: relative;
+            overflow: hidden;
+        }
 
+        /* Status Bar */
+        .status-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 44px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
 
-</div>
+        .status-left {
+            color: #000;
+        }
 
+        .status-right {
+            display: flex;
+            gap: 5px;
+        }
 
+        .notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 30px;
+            background-color: #000;
+            border-radius: 0 0 15px 15px;
+        }
 
+        /* Logo */
+        .logo {
+            position: absolute;
+            top: 73px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8fe7a9;
+            font-size: 32px;
+            font-weight: bold;
+            font-style: italic;
+        }
 
-</div>
-<div style="position: absolute; top: 47px; left: 0px; width: 390px; height: 200px;background-color: undefined;">
-<div style="position: absolute; top: 73.5px; left: 146.5px; width: 97px; height: 53px;background-color: undefined;">
-<div style="position: absolute; top: 0px; left: 0px; color: #8fe7a9;">LOGO</div>
-</div>
-</div>
-<div style="position: absolute; top: 247px; left: 0px; width: 390px; height: 457.83843994140625px;background-color: undefined;">
-<div style="position: absolute; top: 0px; left: 50.5px; width: 289px; height: 457.83843994140625px;background-color: undefined;">
-<div style="position: absolute; top: 0px; left: 0px; width: 289px; height: 331.83843994140625px;background-color: undefined;">
-<div style="position: absolute; top: 0px; left: 0px; width: 289px; height: 294.83843994140625px;background-color: undefined;">
-<div style="position: absolute; top: 0px; left: 0px; color: #000000;">Sign in your account</div>
-<div style="position: absolute; top: 70.83843994140625px; left: 0px; width: 289px; height: 224px;background-color: undefined;">
-<div style="position: absolute; top: 0px; left: 0px; width: 289px; height: 145px;background-color: undefined;">
-<div style="position: absolute; top: 0px; left: 0px; color: #6f6f6f;">Email</div>
-<div style="position: absolute; top: 24px; left: 0px; width: 289px; height: 42px;background-color: #fafafa;">
-<div style="position: absolute; top: 16px; left: 15px; color: #888888;">ex: snsn23@naver.com</div>
-</div>
-<div style="position: absolute; top: 79px; left: 0px; color: #6f6f6f;">Password</div>
-<div style="position: absolute; top: 103px; left: 0px; width: 289px; height: 42px;background-color: #fafafa;">
-<div style="position: absolute; top: 18px; left: 15px; color: #888888;">*********</div>
-</div>
-</div>
-<div style="position: absolute; top: 182px; left: 0px; width: 289px; height: 42px;background-color: #8fe7a9;">
-<div style="position: absolute; top: 16px; left: 118px; color: #ffffff;">SIGN IN</div>
-</div>
-</div>
-</div>
-<div style="position: absolute; top: 320.83843994140625px; left: 0px; color: #888888;">or sign in with</div>
-</div>
-<div style="position: absolute; top: 361.83843994140625px; left: 0px; width: 289px; height: 96px;background-color: undefined;">
-<div style="position: absolute; top: 0px; left: 0.5px; width: 288px; height: 42px;background-color: undefined;">
-<div style="position: absolute; top: 0px; left: 0px; width: 86px; height: 42px;background-color: #f4f4f4;">
-<svg style="position: absolute; top: 13.5px; left: 13.5px; transform: translate(-50%, -50%);" width="27" height="27"><ellipse cx="13.5" cy="13.5" rx="13.5" ry="13.5" fill="#fee500"/></svg>
+        /* Main Content */
+        .main-content {
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 289px;
+            text-align: center;
+        }
 
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 40px;
+        }
 
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
 
+        .form-label {
+            display: block;
+            color: #6f6f6f;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
 
+        .form-input {
+            width: 100%;
+            height: 42px;
+            background-color: #fafafa;
+            border: none;
+            border-radius: 8px;
+            padding: 0 15px;
+            font-size: 14px;
+            color: #000;
+        }
 
-</div>
-</div>
-<div style="position: absolute; top: 0px; left: 101px; width: 86px; height: 42px;background-color: #f4f4f4;">
+        .form-input::placeholder {
+            color: #888888;
+        }
 
-</div>
-<div style="position: absolute; top: 0px; left: 202px; width: 86px; height: 42px;background-color: #f4f4f4;">
+        .signin-btn {
+            width: 100%;
+            height: 42px;
+            background-color: #8fe7a9;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
 
+        .signin-btn:hover {
+            background-color: #7dd699;
+        }
 
+        .divider {
+            margin: 30px 0;
+            color: #888888;
+            font-size: 14px;
+        }
 
+        .social-login {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
 
+        .social-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: bold;
+        }
 
-</div>
-</div>
-</div>
-<div style="position: absolute; top: 85px; left: 0px; width: 289px; height: 11px;background-color: undefined;">
-<div style="position: absolute; top: 0px; left: 11.5px; color: #888888;">Don’t have an account? </div>
-<div style="position: absolute; top: 0px; left: 212.5px; color: #8fe7a9;">SIGN UP</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-Figma to Html code
-This will give the html code for the figma design
+        .kakao {
+            background-color: #fee500;
+            color: #000;
+        }
 
-Generate HTML Code Cancel
+        .naver {
+            background-color: #03c75a;
+            color: white;
+        }
+
+        .google {
+            background-color: white;
+            color: #4285f4;
+            border: 1px solid #ddd;
+        }
+
+        .signup-link {
+            color: #888888;
+            font-size: 14px;
+        }
+
+        .signup-link a {
+            color: #8fe7a9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-left">9:41</div>
+            <div class="notch"></div>
+            <div class="status-right">
+                <span>📶</span>
+                <span>📶</span>
+                <span>🔋</span>
+            </div>
+        </div>
+
+        <!-- Logo -->
+        <div class="logo">LOGO</div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <h1 class="title">Sign in your account</h1>
+            
+            <form>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" placeholder="ex: snsn23@naver.com">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-input" placeholder="*********">
+                </div>
+                
+                <button type="submit" class="signin-btn">SIGN IN</button>
+            </form>
+
+            <div class="divider">or sign in with</div>
+
+            <div class="social-login">
+                <button class="social-btn kakao">K</button>
+                <button class="social-btn naver">N</button>
+                <button class="social-btn google">G</button>
+            </div>
+
+            <div class="signup-link">
+                Don't have an account? <a href="#">SIGN UP</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
