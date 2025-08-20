@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Screen</title>
+    <title>Sign Up Screen</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -11,41 +11,49 @@
 </head>
 <body>
     <div class="container">
-        <!-- Status Bar -->
-        <div class="status-bar">
-            <div class="status-left">9:41</div>
-            <div class="notch"></div>
-            <div class="status-right">
-                <span>📶</span>
-                <span>📶</span>
-                <span>🔋</span>
-            </div>
+        <!-- Back Button -->
+        <div class="back-btn" onclick="goBack()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 12H5M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
         </div>
-
-        <!-- Logo -->
-        <div class="logo">BnB</div>
 
         <!-- Main Content -->
         <div class="main-content">
-            <h1 class="title">Sign in your account</h1>
+            <h1 class="title">Create your account</h1>
             
-            <form>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-input" placeholder="ex: jon smith" required>
+                </div>
+                
                 <div class="form-group">
                     <label class="form-label">Email</label>
-                    <input type="email" class="form-input" placeholder="ex: snsn23@naver.com">
+                    <input type="email" class="form-input" placeholder="ex: jon.smith@email.com" required>
                 </div>
                 
                 <div class="form-group">
                     <label class="form-label">Password</label>
-                    <input type="password" class="form-input" placeholder="*********">
+                    <input type="password" class="form-input" placeholder="*********" required>
                 </div>
                 
-                <button type="submit" class="signin-btn">SIGN IN</button>
+                <div class="form-group">
+                    <label class="form-label">Confirm password</label>
+                    <input type="password" class="form-input" placeholder="*********" required>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I understood the <span class="highlight">terms & policy.</span></label>
+                </div>
+                
+                <button type="submit" class="signup-btn">SIGN UP</button>
             </form>
 
-            <div class="divider">or sign in with</div>
+            <div class="divider">or sign up with</div>
 
-            <div class="social-login">
+            <div class="social-signup">
                 <button class="social-btn kakao">
                     <svg viewBox="0 0 86 43" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="43" cy="21.8384" r="13.5" fill="#FEE500"/>
@@ -72,12 +80,12 @@
                 </button>
             </div>
 
-            <div class="signup-link">
-                Don't have an account? <a href="signup.html">SIGN UP</a>
+            <div class="signin-link">
+                Have an account? <a href="index.html">SIGN IN</a>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="signup.js"></script>
 </body>
 </html>
