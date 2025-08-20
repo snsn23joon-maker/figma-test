@@ -24,11 +24,16 @@
         }
 
         .container {
-            width: 390px;
-            height: 844px;
+            width: 100%;
+            max-width: 500px;
+            min-height: 100vh;
             background-color: #f0f8f0;
             position: relative;
             overflow: hidden;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         /* Status Bar - Hidden for web */
@@ -51,27 +56,30 @@
         /* Logo */
         .logo {
             position: absolute;
-            top: 73px;
+            top: 5%;
             left: 50%;
             transform: translateX(-50%);
             color: #8fe7a9;
-            font-size: 32px;
+            font-size: clamp(24px, 4vw, 32px);
             font-weight: bold;
             font-style: italic;
+            z-index: 10;
         }
 
         /* Main Content */
         .main-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 289px;
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: none;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
             text-align: center;
         }
 
         .title {
-            font-size: 24px;
+            font-size: clamp(20px, 3vw, 24px);
             font-weight: 600;
             color: #000;
             margin-bottom: 40px;
@@ -132,12 +140,13 @@
         .social-login {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: clamp(10px, 2vw, 15px);
             margin-bottom: 30px;
+            flex-wrap: wrap;
         }
 
         .social-btn {
-            width: 86px;
+            width: clamp(70px, 15vw, 86px);
             height: 42px;
             border-radius: 15px;
             border: none;
@@ -148,6 +157,7 @@
             font-size: 16px;
             font-weight: bold;
             background-color: #fafafa;
+            flex-shrink: 0;
         }
 
         .social-btn svg {
@@ -182,7 +192,50 @@
             text-decoration: underline;
         }
 
+        /* 반응형 미디어 쿼리 */
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .main-content {
+                max-width: 100%;
+            }
+            
+            .social-login {
+                gap: 10px;
+            }
+            
+            .social-btn {
+                width: 70px;
+            }
+        }
 
+        @media (min-width: 768px) {
+            .container {
+                max-width: 600px;
+                padding: 40px;
+            }
+            
+            .main-content {
+                max-width: 450px;
+            }
+            
+            .social-btn {
+                width: 100px;
+                height: 50px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 700px;
+            }
+            
+            .main-content {
+                max-width: 500px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -199,7 +252,7 @@
         </div>
 
         <!-- Logo -->
-        <div class="logo">LOGO</div>
+        <div class="logo">BnB</div>
 
         <!-- Main Content -->
         <div class="main-content">
