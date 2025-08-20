@@ -1,13 +1,229 @@
-/* 390X844 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: center;
-padding: 0px 0px 134.162px;
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f0f8f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
 
-position: relative;
-width: 390px;
-height: 844px;
+.container {
+    width: 100%;
+    max-width: 500px;
+    min-height: 100vh;
+    background-color: #f0f8f0;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
 
-background: #F0F8F0;
+/* Status Bar - Hidden for web */
+.status-bar {
+    display: none;
+}
+
+.status-left {
+    display: none;
+}
+
+.status-right {
+    display: none;
+}
+
+.notch {
+    display: none;
+}
+
+/* Logo */
+.logo {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8fe7a9;
+    font-size: clamp(24px, 4vw, 32px);
+    font-weight: bold;
+    font-style: italic;
+    background-color: #f0f8f0;
+}
+
+/* Main Content */
+.main-content {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title {
+    font-size: clamp(20px, 3vw, 24px);
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 40px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.form-label {
+    display: block;
+    color: #6f6f6f;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.form-input {
+    width: 100%;
+    height: 42px;
+    background-color: #fafafa;
+    border: none;
+    border-radius: 8px;
+    padding: 0 15px;
+    font-size: 14px;
+    color: #000;
+}
+
+.form-input::placeholder {
+    color: #888888;
+}
+
+.signin-btn {
+    width: 100%;
+    height: 42px;
+    background-color: #8fe7a9;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.signin-btn:hover {
+    background-color: #7dd699;
+}
+
+.divider {
+    margin: 30px 0;
+    color: #888888;
+    font-size: 14px;
+}
+
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: clamp(10px, 2vw, 15px);
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    width: clamp(70px, 15vw, 86px);
+    height: 42px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #fafafa;
+    flex-shrink: 0;
+}
+
+.social-btn svg {
+    width: 100%;
+    height: 100%;
+}
+
+.kakao {
+    background-color: #fafafa;
+}
+
+.naver {
+    background-color: #fafafa;
+}
+
+.google {
+    background-color: #fafafa;
+}
+
+.signup-link {
+    color: #888888;
+    font-size: 14px;
+}
+
+.signup-link a {
+    color: #8fe7a9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* 반응형 미디어 쿼리 */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .main-content {
+        max-width: 100%;
+    }
+    
+    .social-login {
+        gap: 10px;
+    }
+    
+    .social-btn {
+        width: 70px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 600px;
+        padding: 40px;
+    }
+    
+    .main-content {
+        max-width: 450px;
+    }
+    
+    .social-btn {
+        width: 100px;
+        height: 50px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 700px;
+    }
+    
+    .main-content {
+        max-width: 500px;
+    }
+}
