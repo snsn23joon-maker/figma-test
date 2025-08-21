@@ -26,9 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // 회원가입 성공 시 로그인 페이지로 이동
+        // 회원가입 성공 시 온보딩 페이지로 이동
         alert('회원가입이 완료되었습니다!');
-        window.location.href = 'index.html';
+        window.location.href = 'onboarding.html';
     });
 
     // 비밀번호 확인 실시간 검증
@@ -40,3 +40,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+

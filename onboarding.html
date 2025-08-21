@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>온보딩 - 성경 앱 사용 방법 선택</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="onboarding.css">
+</head>
+<body>
+    <div class="container onboarding-container">
+        <!-- Back Button -->
+        <div class="back-btn" onclick="goBack()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 12H5M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <h1 class="onboarding-title">How would you like to use this Bible app?</h1>
+            
+            <div class="usage-cards">
+                <!-- 검색형 카드 -->
+                <div class="usage-card" data-type="search">
+                    <div class="card-icon">
+                        <img src="assets/icons/book-search.svg" alt="검색형">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">검색형</h3>
+                        <p class="card-description">필요한 말씀을 빠르게 검색하고, 주제별 말씀을 찾을 수 있어요</p>
+                    </div>
+                </div>
+
+                <!-- 읽기&기록형 카드 -->
+                <div class="usage-card" data-type="reading">
+                    <div class="card-icon">
+                        <img src="assets/icons/book-pen.svg" alt="읽기&기록형">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">읽기&기록형</h3>
+                        <p class="card-description">통독 루틴을 만들고, 읽은 말씀을 기록으로 남기세요</p>
+                    </div>
+                </div>
+
+                <!-- 나눔&공유형 카드 -->
+                <div class="usage-card" data-type="sharing">
+                    <div class="card-icon">
+                        <img src="assets/icons/book-people.svg" alt="나눔&공유형">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">나눔&공유형</h3>
+                        <p class="card-description">은혜 받은 말씀을 카드로 만들고, 지인이나 SNS에 공유하세요</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="next-btn" id="nextBtn" disabled>NEXT</button>
+        </div>
+    </div>
+
+    <script src="onboarding.js"></script>
+</body>
+</html>
