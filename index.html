@@ -117,7 +117,7 @@
         }
 
         .signin-btn:hover {
-            background-color: #7dd699;
+            background-color: #6bc588;
         }
 
         .divider {
@@ -291,6 +291,52 @@
 
             <div class="signup-link">
                 Don't have an account? <a href="signup.html">SIGN UP</a>
+            </div>
+        </div>
     </div>
+
+    <script>
+        // DOM이 완전히 로드된 후 실행
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailInput = document.querySelector('input[type="email"]');
+            const passwordInput = document.querySelector('input[type="password"]');
+            const signinBtn = document.querySelector('.signin-btn');
+
+            // 입력 필드들의 값이 변경될 때마다 체크
+            function checkInputs() {
+                const emailValue = emailInput.value.trim();
+                const passwordValue = passwordInput.value.trim();
+                
+                // 이메일과 비밀번호가 모두 입력되었는지 확인
+                if (emailValue !== '' && passwordValue !== '') {
+                    signinBtn.style.backgroundColor = '#7dd699'; // 진한 초록색
+                } else {
+                    signinBtn.style.backgroundColor = '#8FE7A9'; // 기본 초록색
+                }
+            }
+
+            // 호버 효과를 위한 CSS 클래스 추가
+            signinBtn.addEventListener('mouseenter', function() {
+                const emailValue = emailInput.value.trim();
+                const passwordValue = passwordInput.value.trim();
+                
+                if (emailValue !== '' && passwordValue !== '') {
+                    this.style.backgroundColor = '#6bc588'; // 입력 완료 상태에서 호버 시 더 진한 색
+                } else {
+                    this.style.backgroundColor = '#7dd699'; // 기본 상태에서 호버 시 진한 색
+                }
+            });
+
+            signinBtn.addEventListener('mouseleave', function() {
+                checkInputs(); // 마우스가 벗어나면 원래 상태로 복원
+            });
+
+            // 이메일 입력 필드 이벤트 리스너
+            emailInput.addEventListener('input', checkInputs);
+            
+            // 비밀번호 입력 필드 이벤트 리스너
+            passwordInput.addEventListener('input', checkInputs);
+        });
+    </script>
 </body>
 </html>

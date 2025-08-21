@@ -9,6 +9,33 @@ document.addEventListener('DOMContentLoaded', function() {
     const signupForm = document.getElementById('signupForm');
     const passwordInput = document.querySelector('input[type="password"]');
     const confirmPasswordInput = document.querySelectorAll('input[type="password"]')[1];
+    const termsCheckbox = document.getElementById('terms');
+    const signupBtn = document.querySelector('.signup-btn');
+
+    // 체크박스 상태에 따른 버튼 색상 변경
+    function updateButtonColor() {
+        if (termsCheckbox.checked) {
+            signupBtn.style.backgroundColor = '#7dd699'; // 진한 초록색
+        } else {
+            signupBtn.style.backgroundColor = '#8FE7A9'; // 기본 초록색
+        }
+    }
+
+    // 호버 효과
+    signupBtn.addEventListener('mouseenter', function() {
+        if (termsCheckbox.checked) {
+            this.style.backgroundColor = '#6bc588'; // 체크된 상태에서 호버 시 더 진한 색
+        } else {
+            this.style.backgroundColor = '#7dd699'; // 체크 안된 상태에서 호버 시 진한 색
+        }
+    });
+
+    signupBtn.addEventListener('mouseleave', function() {
+        updateButtonColor(); // 마우스가 벗어나면 원래 상태로 복원
+    });
+
+    // 체크박스 이벤트 리스너
+    termsCheckbox.addEventListener('change', updateButtonColor);
 
     signupForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -20,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // 약관 동의 확인
-        const termsCheckbox = document.getElementById('terms');
         if (!termsCheckbox.checked) {
             alert('약관에 동의해주세요.');
             return;
