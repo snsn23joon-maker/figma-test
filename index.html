@@ -302,6 +302,9 @@
             const passwordInput = document.querySelector('input[type="password"]');
             const signinBtn = document.querySelector('.signin-btn');
 
+            // 페이지 로드 시 이메일 입력란에 자동으로 포커스
+            emailInput.focus();
+
             // 입력 필드들의 값이 변경될 때마다 체크
             function checkInputs() {
                 const emailValue = emailInput.value.trim();
